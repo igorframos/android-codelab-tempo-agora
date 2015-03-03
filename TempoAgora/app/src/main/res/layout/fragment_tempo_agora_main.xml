@@ -35,5 +35,6 @@
         android:text="Pesquisar"
         android:id="@+id/searchButton"
         android:layout_below="@+id/cityEditText"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="searchWeatherForCity" />
 </RelativeLayout>

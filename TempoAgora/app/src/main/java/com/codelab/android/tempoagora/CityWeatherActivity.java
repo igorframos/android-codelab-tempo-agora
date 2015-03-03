@@ -11,18 +11,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 
-public class TempoAgoraMainActivity extends ActionBarActivity {
-
-    public static final String CITY_NAME = "com.codelab.android.tempoagora.CITY_NAME";
+public class CityWeatherActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tempo_agora_main);
+        setContentView(R.layout.activity_city_weather);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -34,7 +31,7 @@ public class TempoAgoraMainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_tempo_agora_main, menu);
+        getMenuInflater().inflate(R.menu.menu_city_weather, menu);
         return true;
     }
 
@@ -53,19 +50,6 @@ public class TempoAgoraMainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void searchWeatherForCity(View v) {
-        EditText cityEditText = (EditText) findViewById(R.id.cityEditText);
-        String city = cityEditText.getText().toString();
-        if (city.length() > 0) {
-            // Explicit intent that is used to start a CityWeatherActivity.
-            Intent cityWeatherIntent = new Intent(this, CityWeatherActivity.class);
-            cityWeatherIntent.putExtra(CITY_NAME, city);
-            startActivity(cityWeatherIntent);
-        } else {
-            Toast.makeText(this, R.string.no_city_error_text, Toast.LENGTH_SHORT).show();
-        }
-    }
-
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -77,8 +61,16 @@ public class TempoAgoraMainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_tempo_agora_main, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_city_weather, container, false);
+
+            setCityName(rootView);
             return rootView;
+        }
+
+        private void setCityName(View view) {
+            TextView textView = (TextView) view.findViewById(R.id.cityName);
+            Intent intent = getActivity().getIntent();
+            textView.setText(intent.getStringExtra(TempoAgoraMainActivity.CITY_NAME));
         }
     }
 }

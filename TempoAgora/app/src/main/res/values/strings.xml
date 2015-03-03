@@ -3,4 +3,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="main_screen_text">Escolha a cidade para saber como está o tempo.</string>
+    <string name="title_activity_city_weather">Tempo na Cidade</string>
+    <string name="no_city_error_text">Digite o nome da cidade!</string>
+    <string name="placeholder_city_name">Cidade</string>
 </resources>

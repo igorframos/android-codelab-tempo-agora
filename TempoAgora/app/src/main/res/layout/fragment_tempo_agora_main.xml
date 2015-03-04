@@ -10,30 +10,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/main_screen_text"
-        android:id="@+id/cityChoiceText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/cityEditText"
-        android:layout_below="@+id/cityChoiceText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/cityChoiceText"
-        android:layout_alignEnd="@+id/cityChoiceText" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pesquisar"
-        android:id="@+id/searchButton"
-        android:layout_below="@+id/cityEditText"
-        android:layout_centerHorizontal="true" />
+        android:text="@string/hello_world"
+        android:id="@+id/textView" />
 </RelativeLayout>

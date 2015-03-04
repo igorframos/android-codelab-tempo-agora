@@ -6,4 +6,6 @@
     <string name="title_activity_city_weather">Tempo na Cidade</string>
     <string name="no_city_error_text">Digite o nome da cidade!</string>
     <string name="placeholder_city_name">Cidade</string>
+    <string name="connection_failed_error_message">Falha na conexão com OpenWeatherMap. Não foi possível obter os dados necessários.</string>
+    <string name="placeholder_weather_text">Consultando bola de cristal...</string>
 </resources>

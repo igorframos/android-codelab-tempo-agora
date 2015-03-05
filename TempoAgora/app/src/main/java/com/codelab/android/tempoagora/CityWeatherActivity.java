@@ -125,7 +125,6 @@ public class CityWeatherActivity extends ActionBarActivity {
 
         private String getWeatherForCity() throws IOException {
             URL url = new URL(BASE_URL + URLEncoder.encode(cityName, "UTF-8"));
-            Log.d("URL to connect", url.toString());
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
@@ -139,12 +138,12 @@ public class CityWeatherActivity extends ActionBarActivity {
 
         private static String getStringFromInputStream(InputStream inputStream) throws IOException {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            String response = "";
+            StringBuilder response = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
-                response += line;
+                response.append(line);
             }
-            return response;
+            return response.toString();
         }
     }
 }
